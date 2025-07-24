@@ -1,0 +1,39 @@
+/* Glassmorphism card */
+.glass-box {
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Inputs modernos */
+.form-modern {
+    background-color: #111;
+    color: white;
+    border: none;
+    border-bottom: 2px solid #333;
+    border-radius: 0;
+    padding: 12px;
+    transition: all 0.3s ease;
+}
+
+.form-modern:focus {
+    background-color: #000;
+    border-bottom: 2px solid #f78c00;
+    box-shadow: none;
+    color: white;
+}
+
+/* Botão com gradiente */
+.btn-gradient {
+    background: linear-gradient(90deg, #f78c00, #ff9900);
+    color: black;
+    font-weight: bold;
+    border: none;
+    transition: all 0.3s ease;
+}
+
+.btn-gradient:hover {
+    background: linear-gradient(90deg, #ffa733, #f78c00);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(255, 140, 0, 0.4);
+}

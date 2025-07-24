@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% block title %}Home{% endblock %}
+
+
+{% block content %}
+<section class="d-flex align-items-center justify-content-center text-center" style="min-height: 80vh; background-color: #191919; color: #f78c00;">
+    <div>
+        <h1 class="display-3 fw-bold mb-4">Sistema de Login</h1>
+        <p class="lead mb-5">Autenticação moderna com Flask, SQLAlchemy, WTForms e Sessions.</p>
+
+        {% if usuario_nome %}
+            <p class="lead mb-5">Seja bem-vindo, {{ usuario_nome }}</p>
+        {% endif %}
+
+        {% if disabled %} 
+            {% block disabled_btn %}disabled{% endblock %}
+        {% endif %}
+        
+
+    </div>
+</section>
+{% endblock %}

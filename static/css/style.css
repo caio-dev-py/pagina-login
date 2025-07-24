@@ -1,0 +1,63 @@
+/* Cores base do tema */
+:root {
+    --laranja: #f78c00;
+    --laranja-claro: #ffa733;
+    --preto: #000;
+    --cinza-escuro: #121212;
+}
+
+/* Cor de fundo geral */
+body {
+    background-color: var(--cinza-escuro);
+    color: var(--laranja);
+}
+
+/* Navbar escura com texto laranja */
+.navbar.bg-light {
+    background-color: var(--preto) !important;
+}
+
+.navbar-brand,
+.navbar-nav .nav-link {
+    color: var(--laranja) !important;
+    font-weight: bold;
+}
+
+.navbar-nav .nav-link:hover {
+    color: var(--laranja-claro) !important;
+}
+
+:root {
+    --laranja: #f78c00;
+    --laranja-claro: #ffa733;
+    --preto: #000;
+}
+
+/* Botão preenchido com laranja */
+.btn-laranja {
+    background-color: var(--laranja);
+    color: var(--preto);
+    border: none;
+
+    font-weight: bolder;
+}
+
+.btn-laranja:hover {
+    background-color: var(--laranja-claro);
+    color: var(--preto);
+}
+
+/* Botão com contorno laranja */
+.btn-outline-laranja {
+    background-color: transparent;
+    color: var(--laranja);
+    border: 2px solid var(--laranja);
+
+    font-weight: bolder;
+}
+
+.btn-outline-laranja:hover {
+    background-color: var(--laranja);
+    color: var(--preto);
+}
+

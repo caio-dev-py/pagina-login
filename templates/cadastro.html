@@ -1,0 +1,79 @@
+{% extends 'base.html' %}
+{% block title %}Cadastro{% endblock %}
+
+{% block style %}{{ url_for('static', filename='css/style_cadastro.css') }}{% endblock %}
+
+{% block content %}
+
+
+<section class="d-flex justify-content-center align-items-center mt-4" style="min-height: 100vh; background: linear-gradient(135deg, #0d0d0d, #1a1a1a);">
+    <div class="glass-box p-5 rounded-4 shadow-lg w-100" style="max-width: 450px;">
+        <h2 class="text-center mb-4" style="color: #f78c00;">Crie sua Conta</h2>
+        
+        {% with msgs = get_flashed_messages() %}
+            {% if msgs %}
+                {% for msg in msgs %}
+                    <div class="alert alert-success alert-dismissible fade show mt-3">
+                        {{ msg }}
+                        <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+                    </div>
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+
+        <form action="/auth/cadastro" method="post">
+            {{ form.hidden_tag() }}
+
+            <div class="mb-4">
+                {{ form.nome.label(class="form-label text-light") }}
+                {{ form.nome(class="form-control form-modern", required=false) }}
+                {% for erro in form.nome.errors %}
+                    <div class="alert alert-danger alert-dismissible fade show mt-2">
+                        {{ erro }}
+                        <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+                    </div>
+                {% endfor %}
+            </div>
+
+            <div class="mb-4">
+                {{ form.email.label(class="form-label text-light") }}
+                {{ form.email(class="form-control form-modern", required=false) }}
+                {% for erro in form.email.errors %}
+                    <div class="alert alert-danger alert-dismissible fade show mt-2">
+                        {{ erro }}
+                        <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+                    </div>
+                {% endfor %}
+            </div>
+
+            <div class="mb-4">
+                {{ form.senha.label(class="form-label text-light") }}
+                {{ form.senha(class="form-control form-modern", required=false) }}
+                {% for erro in form.senha.errors %}
+                    <div class="alert alert-danger alert-dismissible fade show mt-2">
+                        {{ erro }}
+                        <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+                    </div>
+                {% endfor %}
+            </div>
+
+            <div class="mb-4">
+                {{ form.conf_senha.label(class="form-label text-light") }}
+                {{ form.conf_senha(class="form-control form-modern", required=false) }}
+                {% for erro in form.conf_senha.errors %}
+                    <div class="alert alert-danger alert-dismissible fade show mt-2">
+                        {{ erro }}
+                        <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+                    </div>
+                {% endfor %}
+            </div>
+
+            
+
+            <div class="d-grid mt-4">
+                {{ form.enviar(class="btn btn-gradient btn-lg") }}
+            </div>
+        </form>
+    </div>
+</section>
+{% endblock %}

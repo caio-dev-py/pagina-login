@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% block title %}Dashboard{% endblock %}
+
+
+
+{% block content %}
+    <section class="d-flex justify-content-center align-items-center" style="min-height: 100vh; background: linear-gradient(135deg, #0d0d0d, #1a1a1a);">
+        <div class="glass-box p-5 rounded-4 shadow-lg w-100" style="max-width: 500px;">
+            <h2 class="text-center mb-4" style="color: #f78c00;">Bem-vindo ao Painel</h2>
+
+            <div class="mb-3">       
+                <div class="fs-5 fw-semibold text-white">Nome: {{ nome }}</div>
+            </div>
+
+            <div class="mb-3">
+                
+                <div class="fs-5 fw-semibold text-white">Email: {{ email }}</div>
+            </div>
+
+            <div class="text-center mt-4">
+                <a href="/auth/logout" class="btn btn-gradient">Sair</a>
+            </div>
+        </div>
+    </section>
+
+    {% if disabled_btn %}
+        {% block disabled_btn %}disabled{% endblock %}
+    {% endif %}
+
+{% endblock %}
